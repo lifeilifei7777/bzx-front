@@ -1,16 +1,17 @@
-/** WARNING: DON'T EDIT THIS FILE */
-/** WARNING: DON'T EDIT THIS FILE */
-/** WARNING: DON'T EDIT THIS FILE */
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import { resolve } from 'path'
 
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-
-function getPlugins() {
-  const plugins = [react(), tsconfigPaths()];
-  return plugins;
-}
-
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: getPlugins(),
-});
+  plugins: [vue(), tsconfigPaths()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
+  },
+  server: {
+    port: 3000
+  }
+})

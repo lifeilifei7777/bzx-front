@@ -4,9 +4,9 @@
 
 /** @type {import('tailwindcss').Config} */
 
-export default {
+module.exports = {
   darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue}"],
   theme: {
     container: {
       center: true,
